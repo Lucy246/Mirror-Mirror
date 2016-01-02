@@ -1,0 +1,178 @@
+<html>
+
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,200,300" rel="stylesheet" type="text/css">
+    <script src="hound-web-sdk.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.7/semantic.min.css">
+    <link rel="stylesheet" href="voice.css">
+  </head>
+
+  <body>
+    <div class="ui very padded basic center aligned segment">
+      <div class="huge ui icon inverted button" id="mic-button" onclick="startStopVoiceSearch()">
+        <i id="voiceIcon" class="unmute big icon"></i>
+      </div>
+
+      <h2 class="ui inverted header">
+        <span id="instructions">Click the mic, then say where you want to go.</span>
+        <div class="sub header" id="instructions2"></div>
+      </h2>
+
+      <textarea id="query" type="text" placeholder=""></textarea>
+  
+
+      <div class="results">
+        <div class="ui field" hidden>
+          <h3 class="ui inverted header">Response object</h3>
+          <textarea id="responseJSON"></textarea>
+        </div>
+        <div class="ui field" hidden>
+          <h3 class="ui inverted header">Search info object</h3>
+          <textarea id="infoJSON"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <script> 
+
+      //HTML ELEMENTS FOR DISPLAYING RESPONSE AND INFO JSON's
+      var jsonElet = document.getElementById("responseJSON");
+      var infoElet = document.getElementById("infoJSON");
+
+
+      //REQUEST INFO JSON
+      var requestInfo = {
+         PartialTranscriptsDesired: true,
+         ClientID: "XvhaXvh0bwVhNZPq6OP5RA=="
+      };
+
+
+      //INITIALIZE COMMON CONVERSATION OBJECT FOR STORING CONVERSATION STATE
+      var myConversation = new Hound.Conversation();
+
+
+      //INITIALIZE VOICE SEARCH OBJECT
+      var voiceSearch = new Hound.VoiceSearch({
+
+        // provide client information here if connection is secure
+        // to skip the authentication on proxy side
+        client: {
+          "clientId": "XvhaXvh0bwVhNZPq6OP5RA==",
+          "clientKey": "XYklpRQsfav306ndOVFTwUzsxTX24t-3N7-WuuZq19v3b5TmSiFdZVdcs_-0besav1u86g0yHqKSd5eSNnFaIQ=="
+        },
+
+        conversation: myConversation,
+
+        enableVAD: true,
+
+        onTranscriptionUpdate: function(trObj) {
+          var transcriptElt = document.getElementById("query");
+          transcriptElt.value = trObj.PartialTranscript;
+        },
+
+        onResponse: function(response, info) {
+          if (response.AllResults && response.AllResults[0] !== undefined) {
+            jsonElet.value = JSON.stringify(response, undefined, 2);
+            jsonElet.parentNode.hidden = false;
+            infoElet.value = JSON.stringify(info, undefined, 2);
+            infoElet.parentNode.hidden = false;
+          }
+        },
+
+        onAbort: function(info) {},
+
+        onError: function(err, info) {
+          jsonElet.parentNode.hidden = true;
+          infoElet.value = JSON.stringify(info, undefined, 2);
+          infoElet.parentNode.hidden = false;
+          document.getElementById("voiceIcon").className = "unmute big icon";
+        },
+
+        onRecordingStarted: function() {
+          document.getElementById("voiceIcon").className = "selected radio icon big yellow";
+        },
+
+        onRecordingStopped: function(recording) {
+          document.getElementById("voiceIcon").className = "unmute big icon";
+          document.getElementById("textSearchButton").disabled = false;
+          document.getElementById("query").readOnly = false;
+        },
+
+        onAudioFrame: function(frame) {}
+
+      });
+
+
+      //START OR STOP VOICE SEARCH
+      function startStopVoiceSearch() {
+
+        var instructions = document.getElementById('instructions');
+        var instructions2 = document.getElementById('instructions2');
+        instructions.innerHTML = 'Say where you want to go.';
+        instructions2.innerHTML = 'For example: "I want to go to Berlin from January 3 to January 6.';
+
+        if (voiceSearch.isState("streaming")) {
+          voiceSearch.stop();
+        } else {
+          voiceSearch.start(requestInfo);
+          document.getElementById("voiceIcon").className = "loading circle notched icon big";
+          document.getElementById("textSearchButton").disabled = true;
+          document.getElementById("query").readOnly = true;  
+        }
+      }
+
+
+      //UPLOAD AUDIO FILE
+      function onFileUpload() {
+        var fileElt = document.getElementById("file");
+        var file = fileElt.files[0];
+        if (!file) return;
+
+        var reader = new FileReader();
+        reader.onload = function(){
+          var arrayBuffer = reader.result;
+          voiceSearch.upload(arrayBuffer, requestInfo);
+        };
+        reader.readAsArrayBuffer(file);
+      }
+
+
+      //INITIALIZE TEXT SEARCH OBJECT
+      var textSearch = new Hound.TextSearch({
+
+        proxy: {
+          route: "/textSearchProxy",
+          method: "GET"
+        },
+
+        conversation: myConversation,
+
+        onResponse: function(response, info) {
+          if (response.AllResults && response.AllResults[0] !== undefined) {
+            jsonElet.value = JSON.stringify(response, undefined, 2);
+            jsonElet.parentNode.hidden = false;
+            infoElet.value = JSON.stringify(info, undefined, 2);
+            infoElet.parentNode.hidden = false;
+          }
+        },
+
+        onError: function(err, info) {
+          jsonElet.parentNode.hidden = true;
+          infoElet.value = JSON.stringify(info, undefined, 2);
+          infoElet.parentNode.hidden = false;
+        }
+
+      });
+      
+
+      //START TEXT SEARCH
+      function doTextSearch() {
+        var query = document.getElementById('query').value;
+        textSearch.search(query, requestInfo);
+      } 
+
+    </script>
+
+  </body>
+
+</html>

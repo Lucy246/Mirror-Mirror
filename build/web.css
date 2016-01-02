@@ -1,0 +1,266 @@
+* {
+   box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+  background: #efefef;
+}
+
+body, p, .ui.header {
+    font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+}
+
+.ui.segment {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.ui.message {
+  border: none !important;
+  border-color: transparent;
+  border-radius: 0 !important;
+}
+
+#react-container {
+  min-height: 80vh;
+  background: #efefef;
+}
+
+.muted {
+  color: #999 !important;
+}
+
+.sticky {
+  z-index: 10000 !important;
+}
+
+.ui.header.thin-label {
+  font-weight: 300;
+}
+
+.ResultsLoader {
+  min-height: 80vh !important;
+}
+
+.app-main-content,
+.SearchBar {
+    background: #fff !important;
+}
+
+.container-loader {
+  margin: 50px auto;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+
+.loader-text {
+  color: #666;
+  margin-top: 20px;
+}
+
+.rangeSlider {
+  width: 100%;
+  max-width: 500px;
+  height: 15px;
+  border: 1px solid #46E6D0;
+  background: #ECFFFE;
+  border-radius: 50px;
+  margin-top: 3px;
+}
+
+.rangeSlider .handle {
+  font-size: 0.9em;
+  text-align: center;
+  background-color: rgb(106, 219, 216) !important;
+  color: white;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  border-radius: 30px;
+  transition: transform 0.3s;
+  transform: scale(1);
+}
+
+.handle.active {
+  transform: scale(1.3);
+  background-color: grey;
+}
+
+.bar {
+  position: relative;
+  background: #ddd;
+  height: 10px;
+}
+.bar.bar-1 {
+  background: #f00;
+}
+
+.bar.bar-2 {
+  background: #0f0;
+}
+
+.ui.button {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  border-radius: 0;
+}
+
+
+.ui.teal.button {
+    background-color: rgb(106, 219, 216) !important;
+    transition: background 0.3s;
+}
+
+.ui.teal.button:hover,
+.ui.teal.button:active {
+  background-color: #009c95 !important;
+}
+
+.ui.red.button {
+  background-color: #FF5858;
+}
+
+.ToursActivitiesSearchBar {
+    margin: 0 !important;
+}
+
+.ResultsColumn {
+    border-left: 1px solid #ddd;
+}
+
+.map-marker-number {
+  top: -2px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgb(106, 219, 216);
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.pagination {
+  padding: 20px;
+  text-transform: capitalize;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+.pages.pagination {
+  width: auto;
+  margin: 0;
+}
+
+.pagination ul {
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.pagination li {
+    display: inline-block;
+}
+
+.pagination a {
+    cursor: pointer;
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+.pagination a:hover,
+.pagination a:focus {
+  background: #ddd;
+}
+
+.pagination .active a {
+  background: rgb(106, 219, 216);
+  color: white;
+}
+
+.app-main-content {
+  min-height: 80vh;
+}
+
+.HotelDetail .app-main-content {
+  margin-top: 147px;
+}
+.HotelDetailsRoom {
+  width: 75%;
+  margin: 20px auto;
+}
+
+.HotelDetailsRoom .mdl-card__supporting-text {
+  width: 100%;
+  padding-bottom: 0;
+}
+
+.HotelDetail__amenities-list-item {
+  display: inline-block;
+  width: 48%;
+}
+
+.HotelDetail__total-cost {
+  text-align: center;
+  border-top: 1px solid #ddd !important;
+  padding-top: 20px !important;
+  margin: 0 -20px !important;
+  background: #6ADBD8 !important;
+  padding-bottom: 20px !important;
+  color: white  !important;
+}
+
+.Cart__item-details {
+  font-size: 10px;
+}
+
+.HotelDetailsRoom__footer {
+  padding: 25px;
+}
+
+
+.image-gallery {
+  background: #333333;
+  border: 1px solid #ddd;
+}
+  .image-gallery .slider {
+    margin: 0px !important;
+    padding-left: 0px !important;
+  }
+
+  .image-gallery .carousel {
+    max-height: 400px;
+  }
+  
+  .image-gallery .carousel~.carousel {
+    margin-top: 10px;
+  }
+
+  .carousel img {
+      height: 100%;
+      display: inline-block;
+      width: auto;
+  }
+
+
+  .image-gallery .carousel .thumb {
+      border: 1px solid #666;
+      height: 120px;
+      width: 120px;
+  }
+
+  .carousel .thumb.selected, .carousel .thumb:hover {
+    border: 3px solid rgb(106, 219, 216);
+    padding: 2px;
+  }
