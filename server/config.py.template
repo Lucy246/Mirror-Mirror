@@ -1,5 +1,7 @@
+import os
+
 # Values can be retrieved from https://dl-hackathon.com/s/signUp.html
 
-user_id = ''
-password = ''
-app_key = ''
+user_id = os.environ.get('ATT_USER_ID', '')
+password = os.environ.get('ATT_PASSWORD', '')
+app_key = os.environ.get('ATT_APP_KEY', '')
