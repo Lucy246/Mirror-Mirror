@@ -40,6 +40,16 @@ def _get_life_object():
 
     return life
 
+def _reset_for_demo():
+    life = _get_life_object()
+    life.do_something('door-lock', 'lock', 'unlocked')
+    life.do_something('contact-sensor', 'arm-state', 'disarmed')
+    life.do_something('thermostat', 'cool-setpoint', str(ATTDigitalLife.f_to_weird_units(72)))
+    life.do_something('thermostat', 'fan-mode', 'auto')
+    life.do_something('thermostat', 'thermostat-mode', 'off')
+    life.do_something('thermostat', 'cool-setpoint', str(ATTDigitalLife.f_to_weird_units(72)))
+    life.do_something('thermostat', 'heat-setpoint', str(ATTDigitalLife.f_to_weird_units(72)))
+
 
 def lock_door_intent(request):
     output_speech = 'Locking the door'

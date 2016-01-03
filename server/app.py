@@ -12,6 +12,12 @@ def home():
     return 'Hello, Alexa!'
 
 
+@app.route('/reset-demo', methods=['GET'])
+def reset_demo():
+    echo._reset_for_demo()
+    return '{"status": "ok"}'
+
+
 @app.route('/echo/MirrorAPI', methods=['GET', 'POST'])
 def mirror_api():
     if request.method == 'POST':
