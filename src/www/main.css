@@ -4,13 +4,11 @@ body, html {
     margin: 0px;
     width:100%;
     height: 100%;
-
-
     font-family: "Avenir", sans-serif;
     font-weight: 300;
-    letter-spacing: -2px;
     color: #fff;
-    font-size: 75px;
+    font-size: 50px;
+    line-height: 1;
      -webkit-font-smoothing: antialiased;
 }
 .wi {
@@ -159,6 +157,12 @@ body, html {
     font-size: 20px;
     line-height: 20px;
 }
+
+.temp, .temp .icon {
+    margin-top: 20px;
+}
+
+
 .forecast-table .day, .forecast-table .temp-min, .forecast-table .temp-max  
 {
     width: 50px;
@@ -196,14 +200,25 @@ body, html {
 }
 
 .DoorStatus {
-    font-size: 30px;
-    margin-top: -10px;
+    font-size: 18px;
+    padding: 5px 20px 5px 50px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: background 0.5s;
+    margin-left: -50px;
 }
 .DoorStatus.Locked {
-    color: green;
+    background: green;
+    color: white;
 }
 .DoorStatus.Unlocked {
-    color: red;
+    background: #9A2727;
+    color: white;
+    -webkit-animation: alertPulse 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 1; 
 }
 
 
@@ -220,3 +235,53 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 300;
 }
 
+h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 24px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.HouseTempMessage {
+    font-size: 15px;
+    color: #aaa;
+    -webkit-animation: opacityPulse 8s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0;
+}
+.HouseTempValue {
+    color: #aaa;
+}
+
+
+.gps_ring {
+    border: 3px solid #999;
+    -webkit-border-radius: 30px;
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    left:20px;
+    top:214px;
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.0
+}
+
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+
+@-webkit-keyframes opacityPulse {
+    0% {opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {opacity: 0.0;}
+}
+
+@-webkit-keyframes alertPulse {
+    0% {background-color: #9A2727; opacity: 1;}
+    50% {opacity: red; opacity: 0.75; }
+    100% {opacity: #9A2727; opacity: 1;}
+}

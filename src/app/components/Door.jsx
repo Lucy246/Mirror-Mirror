@@ -9,8 +9,7 @@ var DoorCard = React.createClass({
         var string = (this.props.locked ? 'Locked' : 'Unlocked');
         return (
             <div className="Card DoorCard">
-                <h3 style={{marginBottom: 0, paddingBottom: 0}}>Door Status</h3>
-                <span className={'DoorStatus ' + string}>{string}</span>
+                <h3 className={'DoorStatus ' + string}>Door is {string}</h3>
             </div>
         );
     }

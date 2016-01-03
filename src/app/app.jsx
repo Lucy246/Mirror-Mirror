@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var injectTapEventPlugin = require('react-tap-event-plugin');
-var Mirror = require('./components/Mirror');
+var Overview = require('./components/Overview');
 var ConnectedHome = require('./components/ConnectedHome');
 var ReactRouter = require('react-router');
 var IndexRoute = ReactRouter.IndexRoute;
@@ -28,7 +28,7 @@ var App = React.createClass({
 ReactDOM.render(
   <Router>
         <Route name="root" path="/" component={App}>
-            <IndexRoute component={Mirror} />
+            <IndexRoute component={Overview} />
             <Route path="/connectedhome" component={ConnectedHome} />
         </Route>
   </Router>,
