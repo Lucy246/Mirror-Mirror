@@ -1,0 +1,19 @@
+def ad_watch(ad_watched, ad_click):
+	data_rewards = 0
+	if ad_watched >= 50 and ad_watched <= 99:
+		data_rewards += 10
+		print "You have now earned 10 MB of free data for watching half of the advertisement."
+	if ad_watched == 100:
+		data_rewards += 20
+		print "You have now earned 20 MB of free data for fully viewing this advertisement."
+	if ad_click >= 1:
+		data_rewards += 5
+		print "You have now earned an additional 5 MB of data for clicking on this advertisement."
+	elif ad_watched <= 0 and ad_watched <= 49:
+		data_rewards += 0
+		print "You have earned no free data from not viewing this advertisement."
+	else:
+		data_rewards += 0
+
+
+ad_watch(11, 8)
