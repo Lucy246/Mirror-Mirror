@@ -1,0 +1,33 @@
+{
+  "intents": [
+    {
+      "intent": "LockDoorIntent",
+      "slots": []
+    },
+    {
+      "intent": "UnlockDoorIntent",
+      "slots": []
+    },
+    {
+      "intent": "BedTimeIntent",
+      "slots": []
+    },
+    {
+      "intent": "CoolDownIntent",
+      "slots": []
+    },
+    {
+      "intent": "WarmUpIntent",
+      "slots": []
+    },
+    {
+      "intent": "SetTemperatureIntent",
+      "slots": [
+        {
+          "name": "temperature",
+          "type": "NUMBER"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+LockDoorIntent lock the door
+LockDoorIntent lock the front door
+LockDoorIntent lock the main door
+
+UnlockDoorIntent unlock the door
+UnlockDoorIntent unlock the front door
+UnlockDoorIntent unlock the main door
+
+BedTimeIntent ready for bed
+BedTimeIntent I'm ready for bed
+BedTimeIntent time for bed
+BedTimeIntent bedtime
+BedTimeIntent it's bedtime
+
+CoolDownIntent turn the temperature down
+CoolDownIntent turn down the temperature
+CoolDownIntent too warm
+CoolDownIntent I'm too warm
+CoolDownIntent I am too warm
+CoolDownIntent too hot
+CoolDownIntent I'm too hot
+CoolDownIntent I am too hot
+
+WarmUpIntent turn the temperature up
+WarmUpIntent turn up the temperature
+WarmUpIntent too cold
+WarmUpIntent I'm too cold
+WarmUpIntent I'm cold
+WarmUpIntent I am too cold
+WarmUpIntent I am cold
+
+SetTemperatureIntent set temperature to {temperature}
+SetTemperatureIntent set the temperature to {temperature}
+SetTemperatureIntent set temperature to {temperature} degrees
+SetTemperatureIntent set the temperature to {temperature} degrees
