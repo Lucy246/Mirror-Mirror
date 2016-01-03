@@ -102,7 +102,8 @@ def bed_time_intent(request):
     life.do_something('door-lock', 'lock', 'lock')
     life.do_something('contact-sensor', 'arm-state', 'armed')
     life.do_something('thermostat', 'cool-setpoint', str(ATTDigitalLife.f_to_weird_units(65)))
-    life.do_something('thermostat', 'fan-mode', 'on')
+    life.do_something('thermostat', 'fan-mode', 'on-high')
+    life.do_something('thermostat', 'thermostat-mode', 'cool')
 
     return response
 
