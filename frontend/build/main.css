@@ -1,0 +1,287 @@
+body, html {
+    background: #000;
+    padding: 0px;
+    margin: 0px;
+    width:100%;
+    height: 100%;
+    font-family: "Avenir", sans-serif;
+    font-weight: 300;
+    color: #fff;
+    font-size: 50px;
+    line-height: 1;
+     -webkit-font-smoothing: antialiased;
+}
+.wi {
+    line-height: 75px;
+
+}
+
+.top
+{
+    position: absolute;
+    top: 50px;
+}
+
+.left
+{
+    position: absolute;
+    left: 50px;
+}
+.right
+{
+    position: absolute;
+    right: 50px;
+    text-align: right;
+}
+
+.center-ver
+{
+    position: absolute;
+    top: 50%;
+    height: 200px;
+    margin-top: -100px;
+    line-height: 100px;
+}
+
+.lower-third
+{
+    position: absolute;
+    top: 66.666%;
+    height: 200px;
+    margin-top: -100px;
+    line-height: 100px; 
+}
+
+.center-hor
+{
+    position: absolute;
+    right: 50px;
+    left: 50px;
+    text-align: center; 
+}
+
+.bottom
+{
+    position: absolute;
+    bottom: 50px;
+}
+
+.xxsmall
+{
+    font-size: 15px;
+    letter-spacing: 0px;
+    font-weight: 400;
+}
+.xxsmall .wi {
+    line-height: 15px;
+}
+
+.xsmall
+{
+    font-size: 20px;
+    letter-spacing: 0px;
+    font-weight: 400;
+}
+.xsmall .wi {
+    line-height: 20px;
+}
+
+
+.small
+{
+    font-size: 25px;
+    letter-spacing: 0px;
+    font-weight: 400;
+}
+.small .wi {
+    line-height: 25px;
+}
+
+.medium
+{
+    font-size: 35px;
+    letter-spacing: -1px;
+    font-weight: 300;
+}
+.medium .wi {
+    line-height: 35px;
+}
+
+.xdimmed
+{
+    color: #666;
+} 
+
+.dimmed
+{
+    color: #aaa;
+}
+
+.light
+{
+    font-weight: 300;
+}
+
+.icon 
+{
+    position: relative;
+    top :-10px;
+    display: inline-block;
+    font-size: 45px;
+    padding-right: 5px;
+    font-weight: 100;
+    margin-right: 10px;
+}
+
+.icon-small
+{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: -10px;
+    font-weight: 100;
+}
+
+.time .sec {
+    font-size: 25px;
+    color: #666;
+    padding-left: 5px;
+    position: relative;
+    top: -35px;
+}
+
+.forecast-table {
+    float: right;
+    text-align: right;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.temp, .temp .icon {
+    margin-top: 20px;
+}
+
+
+.forecast-table .day, .forecast-table .temp-min, .forecast-table .temp-max  
+{
+    width: 50px;
+    text-align: right;
+}
+
+.forecast-table .temp-max 
+{
+    width: 60px;
+}
+
+.forecast-table .day
+{
+    color: #999;
+}
+
+.calendar-table {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 10px;
+}
+.calendar-table .days {
+    padding-left: 20px;
+    text-align: right;
+}
+
+.dishwasher {
+    background-color: white;
+    color: black;
+    margin: 0 200px;    
+    font-size: 60px;    
+    border-radius: 1000px;
+    border-radius: 1200px;
+    display: none;
+}
+
+.DoorStatus {
+    font-size: 18px;
+    padding: 5px 20px 5px 50px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: background 0.5s;
+    margin-left: -50px;
+}
+.DoorStatus.Locked {
+    background: green;
+    color: white;
+}
+.DoorStatus.Unlocked {
+    background: #9A2727;
+    color: white;
+    -webkit-animation: alertPulse 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 1; 
+}
+
+
+
+
+
+body {
+  background: black;
+  color: white;
+  font-weight: 300;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 300;
+}
+
+h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 24px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.HouseTempMessage {
+    font-size: 15px;
+    color: #aaa;
+    -webkit-animation: opacityPulse 8s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0;
+}
+.HouseTempValue {
+    color: #aaa;
+}
+
+
+.gps_ring {
+    border: 3px solid #999;
+    -webkit-border-radius: 30px;
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    left:20px;
+    top:214px;
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.0
+}
+
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+
+@-webkit-keyframes opacityPulse {
+    0% {opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {opacity: 0.0;}
+}
+
+@-webkit-keyframes alertPulse {
+    0% {background-color: #9A2727; opacity: 1;}
+    50% {opacity: red; opacity: 0.75; }
+    100% {opacity: #9A2727; opacity: 1;}
+}

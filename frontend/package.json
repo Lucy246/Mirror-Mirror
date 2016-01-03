@@ -1,0 +1,49 @@
+{
+  "name": "material-ui-example",
+  "version": "0.13.2",
+  "description": "Sample project that uses material-ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/callemall/material-ui.git"
+  },
+  "scripts": {
+    "start": "gulp"
+  },
+  "private": true,
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "browser-sync": "^1.8.1",
+    "browserify": "^7.0.3",
+    "gulp": "^3.8.10",
+    "gulp-notify": "^2.1.0",
+    "gulp-util": "^3.0.1",
+    "pretty-hrtime": "^0.2.2",
+    "require-dir": "^0.1.0",
+    "underscore": "^1.7.0",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.2.1"
+  },
+  "dependencies": {
+    "chart.js": "^1.0.2",
+    "classnames": "^2.2.1",
+    "dateformat": "^1.0.12",
+    "google-map-react": "^0.9.3",
+    "history": "^1.17.0",
+    "jquery": "^2.1.4",
+    "lodash": "^3.10.1",
+    "material-ui": "^0.13.0",
+    "moment": "^2.11.0",
+    "react": "^0.14.0",
+    "react-chartjs": "^0.6.0",
+    "react-dom": "^0.14.0",
+    "react-paginate": "^0.4.3",
+    "react-refetch": "^0.6.0",
+    "react-responsive-carousel": "^2.0.2",
+    "react-router": "^1.0.2",
+    "react-slider": "^0.6.0",
+    "react-star-rating": "^1.4.2",
+    "react-star-rating-component": "^0.1.0",
+    "react-sticky": "^3.0.0",
+    "react-tap-event-plugin": "^0.2.1"
+  }
+}

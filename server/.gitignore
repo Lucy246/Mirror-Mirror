@@ -1,0 +1,6 @@
+# Python Junk
+*.pyc
+config.py
+
+# Other Junk
+venv/

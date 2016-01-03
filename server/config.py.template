@@ -1,0 +1,5 @@
+# Values can be retrieved from https://dl-hackathon.com/s/signUp.html
+
+user_id = ''
+password = ''
+app_key = ''
