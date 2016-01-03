@@ -1,17 +1,21 @@
 var React = require('react');
 var Door = require('./Door');
 var Time = require('./Time')
+var Weather = require('./Weather');
 
 var ConnectedHome = React.createClass({
   render() {
     return (
         <section>
             <section className="top left">
-                <h1>Connected Home</h1>
-                <Door />
+                <Time timeFormat={12} updateInterval={1000} />
+                <Door locked={true} />
             </section>
             <section className="top right">
-                <Time timeFormat={12} updateInterval={1000} />
+                <div className="windsun small dimmed"></div><div className="temp"></div><div className="forecast small dimmed"></div>
+            </section>
+            <section className="lower-third center-hor">
+                <div className="compliment light"></div>
             </section>
         </section>
         );

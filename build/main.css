@@ -6,7 +6,7 @@ body, html {
     height: 100%;
 
 
-    font-family: "Lato", sans-serif;
+    font-family: "Avenir", sans-serif;
     font-weight: 300;
     letter-spacing: -2px;
     color: #fff;
@@ -193,6 +193,17 @@ body, html {
     border-radius: 1000px;
     border-radius: 1200px;
     display: none;
+}
+
+.DoorStatus {
+    font-size: 30px;
+    margin-top: -10px;
+}
+.DoorStatus.Locked {
+    color: green;
+}
+.DoorStatus.Unlocked {
+    color: red;
 }
 
 

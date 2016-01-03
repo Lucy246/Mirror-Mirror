@@ -40,7 +40,7 @@ var Time = React.createClass({
         return (
             <section>
                 <div className="date small dimmed">{this.state.date}</div>
-                <div className="time">{this.state.time}</div>
+                <div className="time" style={{fontSize: 40, marginTop: 20}}>{this.state.time}</div>
             </section>
         );
     }
