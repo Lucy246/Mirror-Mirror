@@ -104,9 +104,7 @@ public class Mirror extends AppCompatActivity {
 
 
     private void loadGestures() {
-        log.log(Level.WARNING, "llemanowicz loadGestures start");
-
-        intent = new Intent(/*this, Mirror.class*/);
+        intent = new Intent();
         ComponentName com = new ComponentName("com.tcl.bigpad.gesture", "com.tcl.bigpad.gesture.GestureService");
 
         intent.setComponent(com);
