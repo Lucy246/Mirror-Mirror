@@ -11,6 +11,9 @@ BedTimeIntent I'm ready for bed
 BedTimeIntent time for bed
 BedTimeIntent bedtime
 BedTimeIntent it's bedtime
+BedTimeIntent it is time for bed
+BedTimeIntent it is bedtime
+BedTimeIntent I am ready for bed
 
 CoolDownIntent turn the temperature down
 CoolDownIntent turn down the temperature

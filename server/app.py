@@ -4,9 +4,11 @@ import json
 import SocketServer
 
 from flask import Flask, request
+from flask.ext.cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/', methods=['GET'])
