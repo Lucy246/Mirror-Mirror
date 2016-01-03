@@ -1,5 +1,5 @@
 import requests
-import config
+# import config
 
 
 class ATTDigitalLife:
@@ -90,6 +90,7 @@ class ATTDigitalLife:
         return requests.post(base_url + endpoint, data=data, headers=headers).json()
 
 if __name__ == '__main__':
-    life = ATTDigitalLife(config.user_id, config.password, config.app_key)
-    life.authenticate()
-    print life.do_something('door-lock', 'lock', 'unlock')
+    # life = ATTDigitalLife(config.user_id, config.password, config.app_key)
+    # life.authenticate()
+    # print life.do_something('door-lock', 'lock', 'unlock')
+    pass

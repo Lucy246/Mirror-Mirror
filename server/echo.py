@@ -1,4 +1,13 @@
-import config
+try:
+    import config
+except ImportError:
+    # Heroku Hack!
+    import os
+    config = {
+        'user_id': os.environ.get('ATT_USER_ID', ''),
+        'password': os.environ.get('ATT_PASSWORD', ''),
+        'app_key': os.environ.get('ATT_APP_KEY', '')}
+
 import json
 
 from attdigitallife import ATTDigitalLife
@@ -15,6 +24,8 @@ def data_handler(raw_data):
 
     else:
         print "WARN: Unhandled request type is {}".format(request['type'])
+
+    return json.dumps([{}])
 
 
 def intent_handler(request):
@@ -33,9 +44,11 @@ def intent_handler(request):
     elif request_name == 'SetTemperatureIntent':
         pass
 
+    return [{}]
+
 
 def _get_life_object():
-    life = ATTDigitalLife(config.user_id, config.password, config.app_key)
+    life = ATTDigitalLife(config['user_id'], config['password'], config['app_key'])
     life.authenticate()
 
     return life

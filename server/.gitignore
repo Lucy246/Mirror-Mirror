@@ -3,4 +3,5 @@
 config.py
 
 # Other Junk
+.DS_Store
 venv/
