@@ -1,0 +1,13 @@
+def electricity_usage(electricity_used):
+	data_rewards = 0
+	if electricity_used < 10000 and electricity_used >= 7000:
+		data_rewards += 50
+	if electricity_used < 10982 and electricity_used >= 10000:
+		data_rewards += 25
+	elif electricity_used >= 10982:
+		data_rewards += 0
+	else:
+		data_rewards += 0
+	print "You have used %d kwh of electricity today. This has earned you %d MB of free data!" %(electricity_used, data_rewards)
+electricity_usage(2)
+# ADJUSTABLE!!!!  ^
