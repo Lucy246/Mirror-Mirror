@@ -1,5 +1,6 @@
 import os
 import echo
+import json
 import SocketServer
 
 from flask import Flask, request
@@ -17,6 +18,13 @@ def home():
 def reset_demo():
     echo._reset_for_demo()
     return '{"status": "ok"}'
+
+@app.route('/get-devices', methods=['GET'])
+def get_devices():
+    life = echo._get_life_object()
+    devices = life.get_devices_raw()
+
+    return json.dumps(devices, indent=2, sort_keys=True)
 
 
 @app.route('/echo/MirrorAPI', methods=['GET', 'POST'])

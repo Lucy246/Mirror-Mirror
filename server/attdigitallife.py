@@ -40,6 +40,17 @@ class ATTDigitalLife:
         
         return self.devices
 
+
+    def get_devices_raw(self):
+        json = self._get_request('/devices')
+
+        return [{
+            'data': json,
+            'auth_token': self.auth_token,
+            'request_token': self.request_token,
+            'gateway_guid': self.gateway_guid
+        }]
+
     
     def do_something(self, device_type, attribute, value):
         deviceGuid = self.devices[device_type]

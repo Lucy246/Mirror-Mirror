@@ -1,5 +1,11 @@
 try:
-    import config
+    import config as cfg
+
+    # More Hacks
+    config = {
+        'user_id': cfg.user_id,
+        'password': cfg.password,
+        'app_key': cfg.app_key}
 except ImportError:
     # Heroku Hack!
     import os
