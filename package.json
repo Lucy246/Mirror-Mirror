@@ -30,6 +30,7 @@
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",
     "material-ui": "^0.13.0",
+    "moment": "^2.11.0",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-paginate": "^0.4.3",
