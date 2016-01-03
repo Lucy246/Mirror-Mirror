@@ -99,7 +99,7 @@ public class Mirror extends AppCompatActivity {
         // http://stackoverflow.com/questions/7746409/android-webview-launches-browser-when-calling-loadurl
         myWebView.setWebViewClient(new WebViewClient());
 
-        myWebView.loadUrl("http://ec19151d.ngrok.io/"); // http://unixpapa.com/js/testkey.html
+        myWebView.loadUrl("http://attsmartmirror.herokuapp.com/"); // http://unixpapa.com/js/testkey.html
     }
 
 
