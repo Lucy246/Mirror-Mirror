@@ -5,6 +5,10 @@
       "slots": []
     },
     {
+      "intent": "DisarmIntent",
+      "slots": []
+    },
+    {
       "intent": "UnlockDoorIntent",
       "slots": []
     },

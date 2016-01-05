@@ -41,6 +41,8 @@ def intent_handler(request):
         return lock_door_intent(request)
     elif request_name == 'UnlockDoorIntent':
         return unlock_door_intent(request)
+    if request_name == 'DisarmIntent':
+        return disarm_intent(request)
     elif request_name == 'BedTimeIntent':
         return bed_time_intent(request)
     elif request_name == 'CoolDownIntent':
@@ -93,6 +95,18 @@ def unlock_door_intent(request):
     life = _get_life_object()
     life.do_something('contact-sensor', 'arm-state', 'disarmed')
     life.do_something('door-lock', 'lock', 'unlock')
+
+    return response
+
+def disarm_intent(request):
+    output_speech = 'Disarming the house'
+    output_type = 'PlainText'
+
+    response = {'outputSpeech': {'type': output_type, 'text': output_speech}, 'shouldEndSession': True}
+
+    # Do the things
+    life = _get_life_object()
+    life.do_something('contact-sensor', 'arm-state', 'disarmed')
 
     return response
 

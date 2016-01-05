@@ -6,6 +6,11 @@ UnlockDoorIntent unlock the door
 UnlockDoorIntent unlock the front door
 UnlockDoorIntent unlock the main door
 
+DisarmIntent disarm the door
+DisarmIntent disarm the house
+DisarmIntent disarm the alarm
+DisarmIntent disarm
+
 BedTimeIntent ready for bed
 BedTimeIntent I'm ready for bed
 BedTimeIntent time for bed
@@ -14,6 +19,8 @@ BedTimeIntent it's bedtime
 BedTimeIntent it is time for bed
 BedTimeIntent it is bedtime
 BedTimeIntent I am ready for bed
+BedTimeIntent I'm going to bed
+BedTimeIntent I am going to bed
 
 CoolDownIntent turn the temperature down
 CoolDownIntent turn down the temperature
